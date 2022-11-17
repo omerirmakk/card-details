@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+$font: 'Space Grotesk', sans-serif;
+$light: hsl(270, 3%, 87%);
+$dark: hsl(279, 6%, 55%);
+$very-dark: hsl(278, 68%, 11%);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font;
+  font-size: 18px;
+}
+body {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  .design {
+    color: white;
+    background-image: url(interactive-card-details-form-main/images/bg-main-mobile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: relative;
+    .card-back {
+      position: relative;
+      background-image: url(interactive-card-details-form-main/images/bg-card-back.png);
+      left: 6em;
+      margin-top: 3em;
+      width: 21em;
+      height: 17em;
+      background-repeat: no-repeat;
+      background-size: contain;
+      h6 {
+        position: absolute;
+        color: $light;
+        font-family: $font;
+        font-size: 0.7em;
+        right: 50px;
+        top: 40%;
+        transform: translateY(-175%);
+      }
+    }
+    .card-front {
+      position: relative;
+      background-image: url(interactive-card-details-form-main/images/bg-card-front.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 21em;
+      height: 17em;
+      left: 2em;
+      bottom: 10.5em;
+      .circle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        left: 6%;
+        top: 6%;
+        background-color: white;
+        border-radius: 50%;
+        &::after {
+          content: '';
+          background-color: transparent;
+          border: solid 2px $light;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          position: absolute;
+          left: 130%;
+          top: 35%;
+        }
+      }
+      .card-number {
+        color: white;
+        font-family: $font;
+        position: relative;
+        bottom: -3em;
+        left: 8%;
+        font-size: 1.3em;
+        letter-spacing: 2px;
+      }
+      .nameanddate {
+        text-transform: uppercase;
+        color: $light;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        justify-content: space-evenly;
+        top: 9em;
+        left: 1em;
+        .name {
+          font-size: 0.8em;
+          margin-right: 11em;
+        }
+        .date {
+          font-size: 0.8em;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  .confirm {
+    position: relative;
+    top: -13em;
+    margin-left: 2em;
+    form {
+      input {
+        position: relative;
+        margin-bottom: 1.5em;
+        color: $very-dark;
+        border-radius: 10px;
+        padding: 1em;
+        width: 25em;
+        border: solid 1px $light;
+        &::placeholder {
+          color: $light;
+        }
+        &:focus {
+          outline-color: hsl(278, 94%, 30%);
+        }
+      }
+      h3 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $very-dark;
+        font-size: 0.8em;
+        margin-bottom: 0.6em;
+      }
+      .exp-dateandcvc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .h3first {
+          margin-right: 2.5em;
+        }
+      }
+      .exp-date-input-div {
+        display: flex;
+
+        flex-flow: row wrap;
+        .exp-date {
+          width: 5em;
+          margin-right: 10px;
+        }
+        .exp-date2 {
+          width: 5em;
+          margin-right: 10px;
+        }
+        .cvcnumber {
+          width: 13em;
+        }
+      }
+    }
+  }
+  .submit {
+    width: 20em;
+    background-color: $very-dark;
+    color: white;
+    height: 3.5em;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.5em;
+  }
+}

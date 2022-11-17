@@ -92,8 +92,12 @@ body {
           margin-right: 11em;
         }
         .date {
-          font-size: 0.8em;
-          margin-left: auto;
+          .month {
+            font-size: 0.9em;
+          }
+          .year {
+            font-size: 0.9em;
+          }
         }
       }
     }
@@ -116,6 +120,9 @@ body {
         }
         &:focus {
           outline-color: hsl(278, 94%, 30%);
+        }
+        &:invalid {
+          outline-color: hsl(0, 100%, 66%);
         }
       }
       h3 {
@@ -162,5 +169,78 @@ body {
     font-weight: bold;
     text-align: center;
     border-radius: 0.5em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .design {
+      flex: content;
+      height: 130vh;
+      background-image: url(interactive-card-details-form-main/images/bg-main-desktop.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      input:invalid {
+        background-color: ivory;
+        border: none;
+        outline: 2px solid red;
+        border-radius: 5px;
+      }
+      .card-back {
+        background-size: contain;
+        height: 30em;
+        width: 30em;
+        position: relative;
+        top: 60%;
+        left: 50%;
+        transform: translate(-20%, -20%);
+
+        h6 {
+          position: absolute;
+          top: 20%;
+          right: 10%;
+          transform: translateY(100%);
+          letter-spacing: 4px;
+          color: white;
+          font-size: 1.2em;
+        }
+      }
+      .card-front {
+        background-size: contain;
+        height: 30em;
+        width: 30em;
+        position: relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        .card-number {
+          position: absolute;
+          top: 30%;
+          font-size: 1.7em;
+        }
+        .nameanddate {
+          .name {
+            position: relative;
+            bottom: -5em;
+            left: 5%;
+            font-size: 1em;
+          }
+          .date {
+            position: relative;
+            bottom: -4.8em;
+            right: -15%;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+    .confirm {
+      flex: -20%;
+      top: auto;
+    }
   }
 }
